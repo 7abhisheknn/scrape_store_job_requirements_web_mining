@@ -9,7 +9,7 @@ def naukriURL(searchString):
     return url
 
 def naukri(searchString):
-    driver = webdriver.Chrome("C:\\WebDrivers\\chromedriver_win32\\chromedriver.exe")
+    driver = webdriver.Chrome()
     URL = naukriURL(searchString)
     driver.get(URL)
     time.sleep(2)
