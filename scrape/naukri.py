@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from config import config
 import time
 
 def naukriURL(searchString):
@@ -9,7 +10,7 @@ def naukriURL(searchString):
     return url
 
 def naukri(searchString):
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(config.chromeDriverPath)
     URL = naukriURL(searchString)
     driver.get(URL)
     time.sleep(2)
@@ -32,3 +33,4 @@ def naukri(searchString):
     driver.close()
     return skills
 
+naukri("python")

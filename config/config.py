@@ -1,6 +1,11 @@
 import yaml
+chromeDriverPath=""
+mongoDbURL=""
 
+def readConfig():
+   with open('.\\config\\config.yml', 'r') as file:
+      file = yaml.safe_load(file)
+      global chromeDriverPath, mongoDbURL
+      chromeDriverPath = file['chromeDriverPath']
+      mongoDbURL = file['mongoDbURL']
 
-with open('config.yml', 'r') as file:
-   prime_service = yaml.safe_load(file)
-prime_service

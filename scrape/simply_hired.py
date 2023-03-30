@@ -1,9 +1,10 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from config import config
 import time
 
 def simplyHired(searchString):
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(config.chromeDriverPath)
     URL = "https://www.simplyhired.com/search?q=" + searchString
     driver.get(URL)
     time.sleep(2)
