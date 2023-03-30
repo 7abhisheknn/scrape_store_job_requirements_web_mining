@@ -6,7 +6,7 @@ def simplyHired(searchString):
     driver = webdriver.Chrome()
     URL = "https://www.simplyhired.com/search?q=" + searchString
     driver.get(URL)
-    time.sleep(5)
+    time.sleep(2)
     soup = BeautifulSoup(driver.page_source, 'html.parser')
     jobListUl=soup.find(id='job-list')
     jobHeaderList = jobListUl.find_all('h3')

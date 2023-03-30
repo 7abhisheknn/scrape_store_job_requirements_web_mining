@@ -1,0 +1,4 @@
+# set chrome driver path here
+chromeDriverPath: ""
+# set mongoDb url here
+mongoDbURL: ""

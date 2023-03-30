@@ -31,3 +31,4 @@ def naukri(searchString):
             skills.append(keySkillSpan.text)
     driver.close()
     return skills
+
