@@ -9,7 +9,7 @@ def naukriURL(searchString):
     url = template.format(searchString)
     return url
 
-def naukri(searchString):
+def naukri(searchString, noOfPages):
     driver = webdriver.Chrome(config.chromeDriverPath)
     URL = naukriURL(searchString)
     driver.get(URL)
@@ -21,6 +21,7 @@ def naukri(searchString):
     for jobArticle in jobArticleList:
         jobURLList.append(jobArticle.find('a', class_='title ellipsis').get('href'))
 
+    jobURLList = jobURLList[:noOfPages]
     skills=[]
     for jobURL in jobURLList:
         driver.get(jobURL)
@@ -32,5 +33,3 @@ def naukri(searchString):
             skills.append(keySkillSpan.text)
     driver.close()
     return skills
-
-naukri("python")

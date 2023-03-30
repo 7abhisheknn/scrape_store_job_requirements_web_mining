@@ -3,7 +3,7 @@ from selenium import webdriver
 from config import config
 import time
 
-def simplyHired(searchString):
+def simplyHired(searchString, noOfPages):
     driver = webdriver.Chrome(config.chromeDriverPath)
     URL = "https://www.simplyhired.com/search?q=" + searchString
     driver.get(URL)
@@ -15,6 +15,7 @@ def simplyHired(searchString):
     for jobHeader in jobHeaderList:
         jobURLList.append("https://www.simplyhired.com"+jobHeader.find('a').get('href'))
     
+    jobURLList = jobURLList[:noOfPages]
     skills=[]
     for jobURL in jobURLList:
         driver.get(jobURL)
