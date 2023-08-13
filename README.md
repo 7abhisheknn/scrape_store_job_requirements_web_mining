@@ -16,6 +16,6 @@
 <hr>
 <br>
 <h3>Using database to store</h3>
-<img src="final_product_images/chat_service_page.png" width="700">
+<img src="final_product_images/database.png" width="700">
 
 
