@@ -31,5 +31,5 @@ def naukri(searchString, noOfPages):
         keySkillSpanList = keySkillDiv.find_all('span')
         for keySkillSpan in keySkillSpanList:
             skills.append(keySkillSpan.text)
-    driver.close()
+    # driver.close()
     return skills
